@@ -15,7 +15,14 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+
   final TextEditingController _emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    _emailController.dispose();
+    super.dispose();
+  }
 
   final TextEditingController _passwordController = TextEditingController();
 
@@ -196,8 +203,8 @@ class _LoginPageState extends State<LoginPage> {
                         borderRadius: BorderRadius.circular(37)),
                     child: const Text(
                       "Log In",
-                      style: TextStyle(
-                          color: White, fontWeight: FontWeight.w700),
+                      style:
+                          TextStyle(color: White, fontWeight: FontWeight.w700),
                     ),
                   ),
                   onPressed: () {
@@ -253,8 +260,7 @@ class _LoginPageState extends State<LoginPage> {
                   ]),
                   child: const Text(
                     "Sign Up",
-                    style: TextStyle(
-                        color: White, fontWeight: FontWeight.w700),
+                    style: TextStyle(color: White, fontWeight: FontWeight.w700),
                   ),
                 ),
               ),
